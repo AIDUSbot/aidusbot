@@ -1,0 +1,9 @@
+<?php
+
+//updates
+
+define('WEBHOOK_URL', 'https://github.com/AIDUSbot/aidusbot/blob/master/updates.php');
+
+if (php_sapi_name() == 'cli') {
+apiRequest('setWebhook', array('url' => isset($argv[1]) && $argv[1] == 'delete' ? '' : WEBHOOK_URL));
+  exit;
